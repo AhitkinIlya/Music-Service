@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
-import { BiChevronLeftCircle, BiChevronRightCircle, BiUser, BiCaretDown, BiCaretRight, BiSearchAlt } from 'react-icons/bi'
-import mogren from '../img/mogren.jpg'
+import { BiChevronLeftCircle, BiChevronRightCircle, BiUser, BiCaretDown, BiSearchAlt } from 'react-icons/bi'
+import Search from './Search'
+import Main from './Main'
+import MediaLibrary from './MediaLibrary'
+import Artists from './Artists'
+import Albums from './Albums'
+import Playlist from './Playlist'
 
 
 const MainScreen = () => {
@@ -18,12 +23,15 @@ const MainScreen = () => {
                             <BiChevronRightCircle size="35px"/>
                         </div>
                     </div>
-                    <div className="header_search">
-                        <div className="search_block">
-                            <div className="search_icon">
-                                <BiSearchAlt size="25px"/>
-                            </div>
-                            <input className="search_input" placeholder="Укажите исполнителя, трек или подскаст"/>
+                    <div className="header_categories">
+                        <div className="header_categories_item active">
+                            <span className="header_categories_title">Плейлисты</span>
+                        </div>
+                        <div className="header_categories_item">
+                            <span className="header_categories_title">Исполнители</span>
+                        </div>
+                        <div className="header_categories_item">
+                            <span className="header_categories_title">Альбомы</span>
                         </div>
                     </div>
                     <div className="header_profile">
@@ -45,111 +53,7 @@ const MainScreen = () => {
                 </div>
             </div>
             <div className="mainscreen_block">
-                <div className="mainscreen_content">
-                    <div className="content_genre">
-                        <span className="genre_title">Для тебя</span>
-                        <span className="genre_description">Чем больше музыки ты слушаешь, тем точнее рекомендации.</span>
-                        <ul className="genre_list">
-                            <li className="genre_item">
-                                <div className="card_block">
-                                    <div className="img_block">
-                                        <img src={mogren} className="card_img"/>
-                                    </div>
-                                    <span className="card_title">This is MORGENSTERN</span>
-                                    <div className="card_description">This is morgenstern. hit always as shit always you know it</div>
-                                    <div className="card_play">
-                                        <BiCaretRight color="white" size="25px"/>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="genre_item">
-                                <div className="card_block">
-                                    <div className="img_block">
-                                        <img src={mogren} className="card_img"/>
-                                    </div>
-                                    <span className="card_title">This is MORGENSTERN</span>
-                                    <span className="card_description">This is morgenstern. hit always as shit always you know it</span>
-                                    <div className="card_play">
-                                        <BiCaretRight color="white" size="25px"/>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="genre_item">
-                                <div className="card_block">
-                                    <div className="img_block">
-                                        <img src={mogren} className="card_img"/>
-                                    </div>
-                                    <span className="card_title">This is MORGENSTERN</span>
-                                    <span className="card_description">This is morgenstern. hit always as shit always you know it</span>
-                                    <div className="card_play">
-                                        <BiCaretRight color="white" size="25px"/>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="genre_item">
-                                <div className="card_block">
-                                    <div className="img_block">
-                                        <img src={mogren} className="card_img"/>
-                                    </div>
-                                    <span className="card_title">This is MORGENSTERN</span>
-                                    <span className="card_description">This is morgenstern. hit always as shit always you know it</span>
-                                    <div className="card_play">
-                                        <BiCaretRight color="white" size="25px"/>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="genre_item">
-                                <div className="card_block">
-                                    <div className="img_block">
-                                        <img src={mogren} className="card_img"/>
-                                    </div>
-                                    <span className="card_title">This is MORGENSTERN</span>
-                                    <span className="card_description">This is morgenstern. hit always as shit always you know it</span>
-                                    <div className="card_play">
-                                        <BiCaretRight color="white" size="25px"/>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="genre_item">
-                                <div className="card_block">
-                                    <div className="img_block">
-                                        <img src={mogren} className="card_img"/>
-                                    </div>
-                                    <span className="card_title">This is MORGENSTERN</span>
-                                    <span className="card_description">This is morgenstern. hit always as shit always you know it</span>
-                                    <div className="card_play">
-                                        <BiCaretRight color="white" size="25px"/>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="genre_item">
-                                <div className="card_block">
-                                    <div className="img_block">
-                                        <img src={mogren} className="card_img"/>
-                                    </div>
-                                    <span className="card_title">This is MORGENSTERN</span>
-                                    <span className="card_description">This is morgenstern. hit always as shit always you know it</span>
-                                    <div className="card_play">
-                                        <BiCaretRight color="white" size="25px"/>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="genre_item">
-                                <div className="card_block">
-                                    <div className="img_block">
-                                        <img src={mogren} className="card_img"/>
-                                    </div>
-                                    <span className="card_title">This is MORGENSTERN</span>
-                                    <span className="card_description">This is morgenstern. hit always as shit always you know it</span>
-                                    <div className="card_play">
-                                        <BiCaretRight color="white" size="25px"/>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <span className="genre_more">Еще</span>
-                    </div>
-                </div>
+                <Playlist />
             </div>
         </div>
     )
